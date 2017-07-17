@@ -1,0 +1,129 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>Table_1</title>
+        <style>
+            body {
+                font-family : Georgia, 'Times New Roman', Times, serif;
+                font-size : 20px;
+                text-align : center;
+                margin : 0 auto;
+                padding : 0;
+                width : 900px;
+            }
+
+            header {
+                height : 100px;
+                border : 1px solid black;
+            }
+
+            .logo {
+                background : #A55;
+                float : left;
+                margin : 5px;
+                padding : 25px;
+                width : 200px;  
+            }
+
+            .menu_site {
+                height : 100px;
+                float : none;
+            }
+
+            .menu_site ul {
+                list-style : none;
+                margin : 0;
+                padding : 10px;
+                font-size :12px;
+                color : #000;
+                text-transform : uppercase;
+                overflow : hidden;
+            }
+
+            .menu_site ul li {
+                float : left;
+                height : 50px;
+            }
+
+            ul a, ul a:before {
+                display : block;
+                margin : 0 30px;
+                padding : 5px 50px;
+                background : #900;
+                color : #fff;
+                text-transform : none;
+                line-height : 50px;
+                
+                position : relative;
+                transition : all 0.3s case-in-out;
+            }
+
+
+            .product_categories, .content {
+                height : 500px;
+                margin : 0 auto;
+                padding : 0;
+                border : 1px solid black;
+            }
+
+            .product_categories {
+                width : 300px;
+                float : left;
+            }
+
+            li {
+                list-style: none;
+            }
+
+            ul {
+                margin-left : 0; 
+                padding-left : 0; 
+            }
+
+            .content {
+                float : none;
+            }
+
+            footer {
+                height : 50px;
+                border : 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id = "wrapper">
+            <div class = "page">
+                <header>
+                    <div class = "logo">
+                        <img src = "" alt = "Logo"/>
+                    </div>
+                    <div class = "menu_site">
+                        <ul>
+                            <li><a href="home.php" data-clone="Домашняя">Home</a></li>
+                            <li><a href="gallery.php" data-clone="Галерея">Gallery</a></li>
+                            <li><a href="contact.php" data-clone="Контакты">Contacts</a></li>
+                        </ul>
+                    </div>
+                </header>
+                <aside class="product_categories">
+                     <ul>
+                        <li>sidebar</li>
+                        <li>Левый блок</li>
+                        <li>обычно категории товаров</li>
+                    </ul>
+                </aside>
+                <div class="content">
+                    <div class="inner">
+                        <p>Контент</p>
+                        <p>Тут будет вывод товаров</p>
+                    </div>
+                </div>
+                <footer>
+                    <p>Футер (подвал) сайта</p>    
+                </footer>
+            </div>
+        </div>
+    </body>
+</html>
