@@ -1,7 +1,6 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title/>
         <meta charset="utf-8"/>
         <title>Table_1</title>
         <style>
