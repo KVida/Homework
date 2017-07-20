@@ -14,15 +14,13 @@
     print_r($arr);
     echo "</pre>";
 
-    echo "Отсортированный массив<br>";
-    sort($arr);
-    echo "<pre>";
-    print_r($arr);
-    echo "</pre>";
-
     $k = 0;
-    for ($i = 0; $i < 9; $i++) {
-        if ($arr[$i] == $arr[$i+1]) {
+    $arr2 = array();
+    $arr2 = array_count_values($arr);
+    $index = count($arr2);
+
+    foreach ($arr2 as $key => $value) {
+        if ($arr2[$key] > 1) {
             $k++;  
         } 
     }

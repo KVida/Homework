@@ -1,0 +1,45 @@
+#wrapper {
+    width: 74%;
+    margin: auto;
+}
+
+.h2_title {
+    font-size : 24px;
+    padding : 12px;
+    margin : auto;
+}
+
+#container {  
+    float : left; 
+}
+
+ul {
+    list-style : none;
+    padding : 0;
+    margin : auto;
+}
+
+.product_item {
+    float : left;
+    padding : 12px;
+    margin : 15px;
+}
+
+.image {
+    background : #AAA;
+    height : 175px;
+}
+
+.product_name,
+.price { 
+    text-align : center; 
+}
+
+.stock { 
+    text-align : right; 
+}
+
+footer {
+    text-align : center;
+    font-size: 16px;
+}

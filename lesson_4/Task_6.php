@@ -15,14 +15,8 @@
     echo "</pre>";
 
     $number = rand(0, 20);
-    $k = 0;
-    for ($i = 0; $i < 10; $i++) {
-        if ($arr[$i] == $number) {
-            $k++;
-        }
-    }
-
-    if ($k != 0) {
+    
+    if (in_array($number, $arr)) {
         echo "Число $number входит в данный массив.";
     } else {
         echo "Число $number НЕ входит в данный массив.";
