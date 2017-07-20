@@ -28,8 +28,12 @@
             }
 
             .menu_site {
-                height : 100px;
-                float : none;
+                position: static;
+                height: 100px;
+                float: none;
+                margin-top: -20px;
+                padding: 0;
+                margin-left: 260px;
             }
 
             .product_categories, .content {
@@ -55,6 +59,7 @@
 
             .content {
                 float : none;
+                margin-left: 303px;
             }
 
             footer {
