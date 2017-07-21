@@ -11,7 +11,7 @@
                 text-align : center;
                 margin : 0 auto;
                 padding : 0;
-                width : 900px;
+                width : 1000px;
             }
 
             header {
@@ -27,27 +27,31 @@
                 width : 200px;  
             }
 
-            .menu_site {
+            .menu_site_header {
+                position : static;
                 height : 100px;
                 float : none;
+                margin-top : -16px;
+                padding : 0;
+                margin-left : 260px;
             }
 
-            .menu_site ul {
+            .menu_site_header ul {
                 list-style : none;
-                margin : 0;
-                padding : 10px;
-                font-size :12px;
+                font-size : 12pt;
                 color : #000;
+                padding : 0;
                 text-transform : uppercase;
                 overflow : hidden;
             }
 
-            .menu_site ul li {
+            .menu_site_header ul li {
                 float : left;
-                height : 50px;
+                padding : 15px;
+               
             }
 
-            ul a, ul a:before {
+            .menu_site_header ul a,.menu_site_header ul a:before {
                 display : block;
                 margin : 0 30px;
                 padding : 5px 50px;
@@ -60,34 +64,75 @@
                 transition : all 0.3s case-in-out;
             }
 
-
             .product_categories, .content {
-                height : 500px;
+                height : 2040px;
+                margin-top : -300px;
                 margin : 0 auto;
                 padding : 0;
                 border : 1px solid black;
             }
 
             .product_categories {
-                width : 300px;
+                width : 250px;
                 float : left;
             }
 
-            li {
-                list-style: none;
+            .inner li {
+                list-style : none;
             }
 
-            ul {
-                margin-left : 0; 
-                padding-left : 0; 
+            .product_name li a {
+                white-space : nowrap;
+                width : 100px;
             }
 
+            .inner ul {
+                list-style : none;
+                padding : 0;
+                margin : auto;
+            }
+            
+            .product_item {
+                float : left;
+                padding : 12px;
+                margin : 12px;
+            }
+
+            .image {
+                background : #AAA;
+                height : 175px;
+                width : 200px;
+            }
+
+            p {
+                margin:0;
+                padding:0;
+            }
+
+            .product_name,
+            .price { 
+                text-align : center;
+                font-size: 10pt; 
+                margin: 0 auto;
+            }
+            .product_name {
+                word-wrap: break-word;
+                width:180px;
+            }
+
+            .stock { 
+                text-align : right;
+                font-size: 10pt;
+            }
             .content {
                 float : none;
+                width:747px;
+                margin-left: 251px;
             }
-
             footer {
                 height : 50px;
+                text-align : center;
+                font-size: 16px;
                 border : 1px solid black;
             }
         </style>
@@ -99,13 +144,13 @@
                     <div class = "logo">
                         <img src = "" alt = "Logo"/>
                     </div>
-                    <div class = "menu_site">
+                    <nav class = "menu_site_header">
                         <ul>
                             <li><a href="home.php" data-clone="Домашняя">Home</a></li>
                             <li><a href="gallery.php" data-clone="Галерея">Gallery</a></li>
                             <li><a href="contact.php" data-clone="Контакты">Contacts</a></li>
                         </ul>
-                    </div>
+                    </nav>
                 </header>
                 <aside class="product_categories">
                      <ul>
@@ -114,10 +159,40 @@
                         <li>обычно категории товаров</li>
                     </ul>
                 </aside>
+                <? include("products.php"); ?>
                 <div class="content">
                     <div class="inner">
                         <p>Контент</p>
                         <p>Тут будет вывод товаров</p>
+
+                        <? if($products) :?>
+                            <ul class="clearfix">
+                            <? $i = 0; ?>
+                                <? foreach ($products as $product) :?>
+                                    <? if($product->visible):?>
+                                        <li class="product_item">
+                                            <div class="image"></div>
+                                            <div class="product_name">                                   
+                                                <a href="<? echo $product->url ?>">
+                                                    <? echo $product->name ?>
+                                                </a>
+                                            </div> 
+                                            <div class="price">
+                                                Цена товара = <? echo $product->variants[0]->price ?>
+                                            </div>
+                                            <div class="stock">
+                                                Колличесво товаров - <? echo $product->variants[0]->stock ?> шт 
+                                            </div>    
+                                        </li>
+                                    <? endif; ?>
+
+                                    <? $i++; ?>
+                                    <? if (!($i % 3)) :?>
+                                        <br>
+                                    <? endif; ?>
+                                <? endforeach; ?>
+                            </ul>
+                        <? endif; ?>
                     </div>
                 </div>
                 <footer>
