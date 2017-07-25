@@ -47,14 +47,15 @@
 
             .menu_site_header ul li {
                 float : left;
-                padding : 15px;
+                padding : 5px;
                
             }
 
             .menu_site_header ul a,.menu_site_header ul a:before {
                 display : block;
-                margin : 0 30px;
-                padding : 5px 50px;
+                margin : 0;
+                padding : 5px 18px;
+                margin-top: 12px;
                 background : #900;
                 color : #fff;
                 text-transform : none;
@@ -145,10 +146,19 @@
                         <img src = "" alt = "Logo"/>
                     </div>
                     <nav class = "menu_site_header">
-                        <ul>
-                            <li><a href="home.php" data-clone="Домашняя">Home</a></li>
-                            <li><a href="gallery.php" data-clone="Галерея">Gallery</a></li>
-                            <li><a href="contact.php" data-clone="Контакты">Contacts</a></li>
+                        <ul class="b-menu">
+                            <? include("menu.php"); ?>
+                            <? if ($menu): ?>
+                                <? foreach ($menu as $item): ?>
+                                    <? if ($item -> visible): ?>
+                                        <? if ($item -> menu_id == 1): ?>
+                                            <li class="menu_item">
+                                                <a href="<? echo $item -> url ?>" class="menu_link"><? echo $item -> name ?></a>
+                                            </li>
+                                        <? endif; ?>
+                                    <? endif; ?>
+                                <? endforeach; ?>
+                            <? endif; ?>
                         </ul>
                     </nav>
                 </header>
