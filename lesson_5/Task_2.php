@@ -30,8 +30,6 @@
             padding: 5px;
             text-align: center;
             text-decoration: none;
-            /*color: #0b0;
-            background-color: #25d;*/
             color: #fff;
             background-color: #337ab7;
             border-color: #2e6da4;
@@ -39,8 +37,6 @@
             border-radius: 4px;
         }
         .menuCSS li a:hover {
-            /*color: #b00;
-            background-color: #d52;*/
             color: #000;
             background-color: #5bc0de;
             border-color: #46b8da;
