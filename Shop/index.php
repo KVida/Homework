@@ -19,6 +19,8 @@
                     <nav class="menu_site_header">
                         <? viewMenu($pages); ?>
                         <a class="menu_cart_header" href="?r=cart"> Корзина - <? echo addCart(); ?> </a>
+                        <a class="menu_wishlist_header" href="?r=wishlist"> Желания </a>
+                        <div class="clearfix"></div>
                     </nav>
                 </header>
                 <aside class="product_categories">

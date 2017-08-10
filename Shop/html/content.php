@@ -24,8 +24,14 @@
         case 'handler':
             include_once(__DIR__ . "/handler.php");
             break; 
+        case 'handler_wish':
+            include_once(__DIR__ . "/handler_wish.php");
+            break; 
         case 'cart':
             include_once(__DIR__ . "/cart.php");
+            break;
+        case 'wishlist':
+            include_once(__DIR__ . "/wishlist.php");
             break;   
         default:
             include_once(__DIR__ . "/products_all.php");

@@ -41,24 +41,18 @@
 
             $number_of_products = count($cart_products);
 
-            switch ($number_of_products) {
-                case 1:
-                    return $number_of_products . " товар";
-                case 21:
-                    return $number_of_products . " товар";
-                case 2:
-                    return $number_of_products . " товарa";
-                case 3:
-                    return $number_of_products . " товарa";
-                case 4:
-                    return $number_of_products . " товарa";
-                case 22:
-                    return $number_of_products . " товарa";
-                case 23:
-                    return $number_of_products . " товарa";
-                default:
-                    return $number_of_products . " товаров";
-            }
+            $number_of_products_hundred = abs($number_of_products)%100;
+            $number_of_products_ten = $number_of_products%10;
+
+            if ($number_of_products_hundred > 10 && $number_of_products_hundred < 20) {
+                return $number_of_products . ' товаров';
+            } elseif ($number_of_products_ten > 1 && $number_of_products_ten < 5) {
+               return $number_of_products . ' товарa'; 
+            } elseif ($number_of_products_ten == 1) {
+                return $number_of_products . ' товар';   
+            } else {
+                return $number_of_products . ' товаров';                
+            }            
         } else {
             return "0 товаров";
         }  

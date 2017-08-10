@@ -38,14 +38,31 @@
         </div>
     </div>
     <div class="product_buy_form"> 
-        <form method="get" action="index.php?r=handler">
+        <form method="get" action="index.php">
             <input type="hidden" name="product_id" value="<? echo $product->id; ?>">
             <input type="hidden" name="r" value="handler">
 
             <label>Кол-во: </label>
-            <input type="number" name="amount" value="1">
+            <select type='number' name='amount'> 
+                <?php 
+                    $amount_number = 1; 
+                    for ($i = 0; $i < 50; $i++) { 
+                        $new_amount_number= $amount_number + $i; 
+                        echo '<option value='.$new_amount_number.'>'.$new_amount_number.'</option>';  
+                    } 
+                ?> 
+            </select>
 
             <input class="button_buy" type="submit" value="Купить">
+        </form>
+
+    </div>
+    <div class="product_wish_form"> 
+        <form method="get" action="index.php">
+            <input type="hidden" name="product_id" value="<? echo $product->id; ?>">
+            <input type="hidden" name="r" value="handler_wish">
+
+            <input class="button_buy" type="submit" value="В избранное">
         </form>
 
     </div>
