@@ -4,10 +4,6 @@
 ?>
 <? foreach ($cart_products as $id => $amount) : ?>
     <div class="cart_box">
-        <?php
-            $products_cart[$id] = getProduct($products,$id);
-            $products_cart[$id]->amount = $amount; 
-        ?>
         <div class='product_img_cart'>
             <img src='../files/images/<? echo $products[$id]->image->filename; ?>' alt=' <? echo $products[$id]->image->filename; ?>'/> 
         </div>
