@@ -14,6 +14,7 @@
     <? endif; ?>
         <div class="img_download">
             <img src="<? echo $img_arr[$i]; ?>" width="150"/>
+            <p><? echo $img_name; ?></p>
         </div>
     
 <? endfor; ?>

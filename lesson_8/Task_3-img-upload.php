@@ -1,5 +1,5 @@
 <?php
-    $ext = array("png", "gif","jpg","jpeg");
+    $ext = array("png", "gif", "jpg", "jpeg");
     $dir_img = 'download_img/';
     $imgs = $_FILES['userimg'];
 
@@ -7,16 +7,17 @@
         $imgCount = count($imgs['name']);
         
         if ($imgCount > 20) {
-            $imgCount = 20;
+            echo "error:  Привышен лимит картинок";
+            exit;
         } 
 		
         $summbyte = 0;
         for ($i = 0; $i < $imgCount; $i++) {
-			$summbyte += $$imgs['size'][$i];
+			$summbyte += $imgs['size'][$i];
 		}
 		
-		if ($summbyte > 100000000) {
-			echo "error: Размер загруженных картинок привышает 100МБ!";
+		if ($summbyte > 5242880) {
+			echo "error: Размер загруженных картинок привышает 5МБ!";
 			exit;
 		}
 		
@@ -26,7 +27,7 @@
             $ext_img = end($ext_point);
 
             if (in_array($ext_img, $ext)) {
-                if ($imgs['size'][$i] <= 1000000000) {
+                if ($imgs['size'][$i] <= 5242880) {
                     $img_id = count(array_filter(glob($dir_img . '*'), 'is_file'));
                     $new_name_img = $img_id . translit($imgs['name'][$i]);
                     move_uploaded_file($imgs['tmp_name'][$i], $dir_img . $new_name_img);  
