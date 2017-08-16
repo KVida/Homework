@@ -9,7 +9,17 @@
         if ($imgCount > 20) {
             $imgCount = 20;
         } 
-        
+		
+        $summbyte = 0;
+        for ($i = 0; $i < $imgCount; $i++) {
+			$summbyte += $$imgs['size'][$i];
+		}
+		
+		if ($summbyte > 100000000) {
+			echo "error: Размер загруженных картинок привышает 100МБ!";
+			exit;
+		}
+		
         for ($i = 0; $i < $imgCount; $i++) {
      
             $ext_point = (explode(".", $imgs['name'][$i]));
