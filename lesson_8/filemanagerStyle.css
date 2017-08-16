@@ -1,0 +1,55 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+
+#wrapper {
+    font-family : Georgia, 'Times New Roman', Times, serif;
+    font-size : 14px;
+    width : 1000px;
+}
+
+.upload_img, .download_img {
+    display : block;
+    border : 1px solid #052685;   
+}
+
+.upload_img {
+    padding : 5px;
+    float : left;
+    width : 450px;
+    margin-left : 50px;
+    height : 990px;   
+}
+
+.download_img {
+    margin-top : 10px;
+    margin-left : 512px;
+    height : 1000px;
+}
+
+.clearboth {
+    clear : both;
+}
+.clearnone {
+    height : 200px;
+    clear : none;
+}
+
+h3, h4 {
+    text-align : center;
+}
+
+.upload_form, input {
+    margin : 5px;
+}
+
+.img_download{
+    height : 300px;
+    float : left;
+    
+}
+
+img {
+    margin : 2px;
+}
