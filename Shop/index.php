@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Lesson_7</title>
+        <title>Lesson_8</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
     </head>

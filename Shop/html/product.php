@@ -38,9 +38,8 @@
         </div>
     </div>
     <div class="product_buy_form"> 
-        <form method="get" action="index.php">
+        <form method="post" action="index.php?r=handler">
             <input type="hidden" name="product_id" value="<? echo $product->id; ?>">
-            <input type="hidden" name="r" value="handler">
 
             <label>Кол-во: </label>
             <select type='number' name='amount'> 
@@ -58,9 +57,8 @@
 
     </div>
     <div class="product_wish_form"> 
-        <form method="get" action="index.php">
-            <input type="hidden" name="product_id" value="<? echo $product->id; ?>">
-            <input type="hidden" name="r" value="handler_wish">
+        <form method="post" action="index.php?r=handler_wish">
+            <input type="hidden" name="wish_product_id" value="<? echo $product->id; ?>">
 
             <input class="button_buy" type="submit" value="В избранное">
         </form>

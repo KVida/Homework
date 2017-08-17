@@ -1,5 +1,6 @@
 <?php
-    $ext = array("png", "gif", "jpg", "jpeg");
+
+    $ext = array("png", "gif", "jpg", "jpeg", "JPG");
     $dir_img = 'download_img/';
     $imgs = $_FILES['userimg'];
 
@@ -10,17 +11,17 @@
             echo "error:  Привышен лимит картинок";
             exit;
         } 
-		
+        
         $summbyte = 0;
         for ($i = 0; $i < $imgCount; $i++) {
-			$summbyte += $imgs['size'][$i];
-		}
-		
-		if ($summbyte > 5242880) {
-			echo "error: Размер загруженных картинок привышает 5МБ!";
-			exit;
-		}
-		
+            $summbyte += $imgs['size'][$i];
+        }
+        
+        if ($summbyte > 5242880) {
+            echo "error: Размер загруженных картинок привышает 5МБ!";
+            exit;
+        }
+        
         for ($i = 0; $i < $imgCount; $i++) {
      
             $ext_point = (explode(".", $imgs['name'][$i]));
