@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="product_buy_form"> 
-        <form method="post" action="index.php?r=handler">
+        <form method="post" action="index.php?r=handler_cart">
             <input type="hidden" name="product_id" value="<? echo $product->id; ?>">
 
             <label>Кол-во: </label>
