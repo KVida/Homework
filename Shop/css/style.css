@@ -311,3 +311,18 @@ footer {
     border : 1px solid black;
     text-align : center;
 }
+
+.userForm {
+    clear:none; 
+    text-align:right;
+    line-height:22px;
+}
+
+label {
+    float:left;
+    padding-right:10px;
+}
+
+.main {
+    float:left;
+}
