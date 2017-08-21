@@ -4,7 +4,6 @@
     } else {
         echo "error: Введите ссылку для товара! ";
     }
-    $referenceProduct = '-/ПриJHHHJdkns-/';
 
     echo $referenceProduct . "<br>";
     $referenceProduct = mb_strtolower(translit($referenceProduct));
