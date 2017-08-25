@@ -11,30 +11,16 @@
             echo "error:  Привышен лимит картинок";
             exit;
         } 
-        
-        $summbyte = 0;
+           
         for ($i = 0; $i < $imgCount; $i++) {
-            $summbyte += $imgs['size'][$i];
-        }
-        
-        if ($summbyte > 5242880) {
-            echo "error: Размер загруженных картинок привышает 5МБ!";
-            exit;
-        }
-        
-        for ($i = 0; $i < $imgCount; $i++) {
-     
-            $ext_point = (explode(".", $imgs['name'][$i]));
-            $ext_img = end($ext_point);
+            $ext_img = pathinfo($imgs['name'][$i],PATHINFO_EXTENSION); 
 
+            $ext_img = mb_strtolower($ext_img);
+           
             if (in_array($ext_img, $ext)) {
-                if ($imgs['size'][$i] <= 5242880) {
-                    $img_id = count(array_filter(glob($dir_img . '*'), 'is_file'));
-                    $new_name_img = $img_id . translit($imgs['name'][$i]);
-                    move_uploaded_file($imgs['tmp_name'][$i], $dir_img . $new_name_img);  
-                } else {
-                    echo "error: Размер загруженной картинки привышает 100Б!";
-                }
+                $img_id = count(array_filter(glob($dir_img . '*'), 'is_file'));
+                $new_name_img = $img_id . translit($imgs['name'][$i]);
+                move_uploaded_file($imgs['tmp_name'][$i], $dir_img . $new_name_img);  
             } else {
                 echo "error: Загрузите картинку!";
                 exit;

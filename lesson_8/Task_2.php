@@ -28,3 +28,6 @@
             fwrite($unpairedNumber, $i . ' => ' . $numberTxt[$i] . "\r\n");
         }
     }
+    fclose($numbers1000);
+    fclose($pairedNumber);
+    fclose($unpairedNumber);

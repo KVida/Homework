@@ -21,3 +21,5 @@
     } else {
         echo "error_2: Ведите имя!";
     }    
+
+    fclose($guestBook);
