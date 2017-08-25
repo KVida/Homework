@@ -4,7 +4,7 @@
     } else {
         echo "error: Введите ссылку для товара! ";
     }
-
+   
     echo $referenceProduct . "<br>";
     $referenceProduct = mb_strtolower(translit($referenceProduct));
 

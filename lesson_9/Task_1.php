@@ -6,7 +6,7 @@
     <input id="userName" type="text" name="userName" required>
 
     <label for="userEmail">Email:</label>
-    <input id="userEmail" type="mail" name="userEmail" required>
+    <input id="userEmail" type="email" name="userEmail" required>
 
     <label for="userPassword">Password:</label>
     <input id="userPassword" type="password" name="userPassword" required>

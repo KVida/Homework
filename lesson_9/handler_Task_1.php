@@ -47,7 +47,7 @@
     }
 
 //Password
-    if (preg_match('/^([A-Za-z0-9]+([A-Za-z0-9\/\-\*]+)*){4,}$/', $userPassword)) {
+    if (preg_match('/([A-Za-z0-9]+([A-Za-z0-9\/\-\*\?]+)*){4,}/', $userPassword)) {
         echo "Password соотвествует";
     } else {
         echo "Password НЕ соотвествует!!!";
